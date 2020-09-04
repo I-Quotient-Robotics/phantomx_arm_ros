@@ -17,6 +17,7 @@
       dxl_read_period: 0.010
       dxl_write_period: 0.010
     </rosparam>
+    <remap from="/pincher/joint_states" to="/joint_states"/>
   </node>
 
   <!-- <param name="$(arg namespace)/trajectory_info" value="$(find phantomx_arm_control)/config/pincher/operator.yaml"/>

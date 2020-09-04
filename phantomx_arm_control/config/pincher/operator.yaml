@@ -1,0 +1,7 @@
+joint:
+  names: [shoulder, arm, forearm, wrist, gripper]
+motion:
+  names: [zero]
+  zero:
+    step: [0.0, 0.0, 0.0, 0.0, 0.0]
+    time_from_start: 3.0

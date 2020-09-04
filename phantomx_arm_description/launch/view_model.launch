@@ -3,7 +3,7 @@
 
   <arg name="arm" default="pincher"/>
 
-  <param name="robot_description" command="$(find xacro)/xacro $(find phantomx_arm_description)/urdf/$(arg arm).urdf.xacro" />
+  <param name="robot_description" command="$(find xacro)/xacro $(find phantomx_arm_description)/urdf/$(arg arm)_robot.urdf.xacro" />
 
   <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
 

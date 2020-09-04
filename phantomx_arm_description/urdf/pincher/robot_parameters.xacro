@@ -2,57 +2,56 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 	
 	<!-- Link names -->
-	<xacro:property name="link_00_name" value="base_link" />
-	<xacro:property name="link_01_name" value="shoulder_link" />
-	<xacro:property name="link_02_name" value="lower_arm_link" />
-	<xacro:property name="link_03_name" value="upper_arm_link" />
-	<xacro:property name="link_04_name" value="wrist_link" />
+	<xacro:property name="link_00_name" value="arm_base_link" />
+	<xacro:property name="link_01_name" value="arm_1_link" />
+	<xacro:property name="link_02_name" value="arm_2_link" />
+	<xacro:property name="link_03_name" value="arm_3_link" />
+	<xacro:property name="link_04_name" value="arm_4_link" />
 	<xacro:property name="link_05_name" value="finger_1_link" />
 	<xacro:property name="link_06_name" value="finger_2_link" />
-	<xacro:property name="link_07_name" value="tool_link" />
-	<xacro:property name="link_08_name" value="world" />
+	<xacro:property name="link_07_name" value="ee_link" />
 	
 	<!-- Joint names -->
 	<xacro:property name="joint_00_name" value="base_joint" />
-	<xacro:property name="joint_01_name" value="shoulder_joint" />
-	<xacro:property name="joint_02_name" value="lower_arm_joint" />
-	<xacro:property name="joint_03_name" value="upper_arm_joint" />
-	<xacro:property name="joint_04_name" value="wrist_joint" />
+	<xacro:property name="joint_01_name" value="arm_1_joint" />
+	<xacro:property name="joint_02_name" value="arm_2_joint" />
+	<xacro:property name="joint_03_name" value="arm_3_joint" />
+	<xacro:property name="joint_04_name" value="arm_4_joint" />
 	<xacro:property name="joint_05_name" value="finger_1_joint" />
 	<xacro:property name="joint_06_name" value="finger_2_joint" />
-	<xacro:property name="joint_07_name" value="tool_joint" />
+	<xacro:property name="joint_07_name" value="ee_joint" />
 	
 	<!-- transmission names -->
-	<xacro:property name="trans_00_name" value="trans_shoulder_joint" />
-	<xacro:property name="trans_01_name" value="trans_lower_arm_joint" />
-	<xacro:property name="trans_02_name" value="trans_upper_arm_joint" />
-	<xacro:property name="trans_03_name" value="trans_wrist_joint" />
+	<xacro:property name="trans_00_name" value="trans_1_joint" />
+	<xacro:property name="trans_01_name" value="trans_2_joint" />
+	<xacro:property name="trans_02_name" value="trans_3_joint" />
+	<xacro:property name="trans_03_name" value="trans_4_joint" />
 	<xacro:property name="trans_04_name" value="trans_finger_1_joint" />
 	<xacro:property name="trans_05_name" value="trans_finger_2_joint" />
 	
 	<!-- actuator names -->
-	<xacro:property name="actr_00_name" value="shoulder_joint_motor" />
-	<xacro:property name="actr_01_name" value="lower_arm_joint_motor" />
-	<xacro:property name="actr_02_name" value="upper_arm_joint_motor" />
-	<xacro:property name="actr_03_name" value="wrist_joint_motor" />
-	<xacro:property name="actr_04_name" value="finger_1_joint_motor" />
-	<xacro:property name="actr_05_name" value="finger_2_joint_motor" />
+	<xacro:property name="actr_00_name" value="joint_1_motor" />
+	<xacro:property name="actr_01_name" value="joint_2_motor" />
+	<xacro:property name="actr_02_name" value="joint_3_motor" />
+	<xacro:property name="actr_03_name" value="joint_4_motor" />
+	<xacro:property name="actr_04_name" value="finger_1_motor" />
+	<xacro:property name="actr_05_name" value="finger_2_motor" />
 	
 	<!-- visual mesh files -->
 	<xacro:property name="geom_00_name" value="package://phantomx_arm_description/meshes/pincher/visual/base.dae" />
-	<xacro:property name="geom_01_name" value="package://phantomx_arm_description/meshes/pincher/visual/shoulder.dae" />
-	<xacro:property name="geom_02_name" value="package://phantomx_arm_description/meshes/pincher/visual/lower_arm.dae" />
-	<xacro:property name="geom_03_name" value="package://phantomx_arm_description/meshes/pincher/visual/lower_arm.dae" />
-	<xacro:property name="geom_04_name" value="package://phantomx_arm_description/meshes/pincher/visual/gripper_body.dae" />
+	<xacro:property name="geom_01_name" value="package://phantomx_arm_description/meshes/pincher/visual/arm_1.dae" />
+	<xacro:property name="geom_02_name" value="package://phantomx_arm_description/meshes/pincher/visual/arm_2.dae" />
+	<xacro:property name="geom_03_name" value="package://phantomx_arm_description/meshes/pincher/visual/arm_2.dae" />
+	<xacro:property name="geom_04_name" value="package://phantomx_arm_description/meshes/pincher/visual/gripper.dae" />
 	<xacro:property name="geom_05_name" value="package://phantomx_arm_description/meshes/pincher/visual/finger.dae" />
 	<xacro:property name="geom_06_name" value="package://phantomx_arm_description/meshes/pincher/visual/finger.dae" />
 	
 	<!-- collision mesh files -->
 	<xacro:property name="colli_00_name" value="package://phantomx_arm_description/meshes/pincher/collision/base.dae" />
-	<xacro:property name="colli_01_name" value="package://phantomx_arm_description/meshes/pincher/collision/shoulder.dae" />
-	<xacro:property name="colli_02_name" value="package://phantomx_arm_description/meshes/pincher/collision/bicep.dae" />
-	<xacro:property name="colli_03_name" value="package://phantomx_arm_description/meshes/pincher/collision/bicep.dae" />
-	<xacro:property name="colli_04_name" value="package://phantomx_arm_description/meshes/pincher/collision/wrist.dae" />
+	<xacro:property name="colli_01_name" value="package://phantomx_arm_description/meshes/pincher/collision/arm_1.dae" />
+	<xacro:property name="colli_02_name" value="package://phantomx_arm_description/meshes/pincher/collision/arm_2.dae" />
+	<xacro:property name="colli_03_name" value="package://phantomx_arm_description/meshes/pincher/collision/arm_2.dae" />
+	<xacro:property name="colli_04_name" value="package://phantomx_arm_description/meshes/pincher/collision/gripper.dae" />
 	<xacro:property name="colli_05_name" value="package://phantomx_arm_description/meshes/pincher/collision/finger.dae" />
 	<xacro:property name="colli_06_name" value="package://phantomx_arm_description/meshes/pincher/collision/finger.dae" />
 </robot>

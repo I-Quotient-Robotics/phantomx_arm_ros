@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot name = "phantomx_pincher_arm_robot" xmlns:xacro = "http://www.ros.org/wiki/xacro">
+
+  <!-- Include accessories -->
+  <xacro:include filename = "$(find phantomx_arm_description)/urdf/pincher/pincher.urdf.xacro" />
+
+  <link name="base_link" />
+
+  <xacro:phantomx_pincher_arm parent="base_link" />
+</robot>

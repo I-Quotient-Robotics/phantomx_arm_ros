@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<launch>
+  <arg name="log_type" default="screen"/>
+
+  <arg name="teleop" default="true"/>
+
+  <!-- Robot description -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find phantomx_arm_description)/urdf/pincher.urdf.xacro" />
+
+  <!-- Robot base -->
+  <include file="$(find phantomx_arm_control)/launch/pincher.launch">
+  </include>
+
+  <group if="$(arg teleop)">
+    <!-- <include file="$(find caster_base)/launch/include/teleop.launch.xml" /> -->
+  </group>
+</launch>

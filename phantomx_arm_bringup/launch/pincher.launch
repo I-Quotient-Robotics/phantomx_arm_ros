@@ -8,7 +8,7 @@
   <param name="robot_description" command="$(find xacro)/xacro $(find phantomx_arm_description)/urdf/pincher_robot.urdf.xacro" />
 
   <!-- Robot base -->
-  <include file="$(find phantomx_arm_control)/launch/pincher.launch">
+  <include file="$(find phantomx_arm_controller)/launch/pincher_v2.launch">
   </include>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="$(arg log_type)">

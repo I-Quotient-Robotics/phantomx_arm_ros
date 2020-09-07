@@ -4,10 +4,10 @@
   <arg name="dxl_baud_rate"           default="1000000"/>
   <arg name="namespace"               default="pincher"/>
 
-  <arg name="use_moveit"              default="true"/>
-  <arg name="use_joint_state"         default="true"/>
+  <arg name="use_moveit"              default="false"/>
+  <arg name="use_joint_state"         default="false"/>
 
-  <param name="dynamixel_info" value="$(find phantomx_arm_control)/config/pincher/controller.yaml"/>
+  <param name="dynamixel_info" value="$(find phantomx_arm_controller)/config/pincher/controller.yaml"/>
   <node name="$(arg namespace)" pkg="dynamixel_workbench_controllers" type="dynamixel_workbench_controllers"
         required="true" output="screen" args="$(arg usb_port) $(arg dxl_baud_rate)">
     <param name="use_moveit"              value="$(arg use_moveit)"/>
@@ -20,7 +20,7 @@
     <remap from="/pincher/joint_states" to="/joint_states"/>
   </node>
 
-  <!-- <param name="$(arg namespace)/trajectory_info" value="$(find phantomx_arm_control)/config/pincher/operator.yaml"/>
+  <!-- <param name="$(arg namespace)/trajectory_info" value="$(find phantomx_arm_controller)/config/pincher/operator.yaml"/>
   <node name="joint_operator" pkg="dynamixel_workbench_operators" type="joint_operator"
         required="true" output="screen" ns="$(arg namespace)">
     <param name="is_loop" value="false"/>

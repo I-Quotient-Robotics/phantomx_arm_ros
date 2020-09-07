@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: phantomx_arm_description
+    relative_path: urdf/pincher_robot.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/phantomx_pincher_arm_robot.srdf
+  CONFIG:
+    author_name: Ye Tian
+    author_email: ye.tian@iquotient-robotics.com
+    generated_timestamp: 1599473402

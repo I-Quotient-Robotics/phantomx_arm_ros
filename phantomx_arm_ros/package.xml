@@ -1,16 +1,21 @@
 <package>
   <name>phantomx_arm_ros</name>
   <version>1.1.0</version>
-  <author>Jhonyfer Angarita Moreno</author>
+  <author>Ye Tian</author>
   <description>
     The phantomx_arm_ros meta package contains multiple packages to use PhantomX arm series.
   </description>
-  <license>BSD</license>
-  <maintainer email="jhnagaritamo@unal.edu.co">Jhonyfer Angarita Moreno</maintainer>
+
+  <license>MIT</license>
+  <maintainer email="ye.tian@iquotient-robotics.com">Ye Tian</maintainer>
+
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>phantomx_description</run_depend>
-  <run_depend>phantomx_gazebo</run_depend>
+  <run_depend>phantomx_arm_viz</run_depend>
+  <run_depend>phantomx_arm_bringup</run_depend>
+  <run_depend>phantomx_arm_controller</run_depend>
+  <run_depend>phantomx_arm_description</run_depend>
+  <run_depend>phantomx_pincher_moveit_config</run_depend>
 
   <export>
     <metapackage/>
